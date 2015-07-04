@@ -1,0 +1,40 @@
+<html lang="en" ng-app="starterApp">
+  <head>
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+    <link rel="stylesheet" href="assets/app.css"/>
+    <meta name="viewport" content="initial-scale=1" />
+  </head>
+  <body layout="column" ng-controller="UserController as ul">
+    
+    <!-- Our Website Content Goes Here -->
+    <div ng-include='"partials/header.html"'></div>
+    <div ng-include='"partials/home.html"'></div>
+
+    <!-- Angular Material Dependencies -->
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="bower_components/angular-material/angular-material.min.js"></script>
+    <script src="src/users/Users.js"></script>
+    <script src="src/users/UserController.js"></script>
+    <script src="src/users/UserService.js"></script>    
+    <script type="text/javascript">
+          angular
+              .module('starterApp', ['ngMaterial', 'users'])
+              .config(function($mdThemingProvider, $mdIconProvider){
+                  $mdThemingProvider.theme('default')
+                      .primaryPalette('brown')
+                      .accentPalette('red');
+                  $mdIconProvider
+                      .defaultIconSet("./assets/svg/avatars.svg", 128)
+                      .icon("menu"       , "./assets/svg/menu.svg"        , 24)
+                      .icon("share"      , "./assets/svg/share.svg"       , 24)
+                      .icon("google_plus", "./assets/svg/google_plus.svg" , 512)
+                      .icon("hangouts"   , "./assets/svg/hangouts.svg"    , 512)
+                      .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
+                      .icon("phone"      , "./assets/svg/phone.svg"       , 512);
+              });
+    </script>
+  </body>
+</html>
